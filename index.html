@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Centar Mihić | Stomatolog Novi Sad | Karađorđeva 28</title>
+    <meta name="description" content="Dental Centar Mihić, Karađorđeva 28, Novi Sad. Ocena 4.9 na Google-u sa 64 recenzije. Dr Marko Mihić, spec. ortodoncije. Zakažite pregled.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #1a5276;
+            --primary-light: #2471a3;
+            --accent: #148f77;
+            --accent-light: #1abc9c;
+            --dark: #1c2833;
+            --text: #2c3e50;
+            --text-light: #5d6d7e;
+            --bg: #ffffff;
+            --bg-warm: #f8f9fa;
+            --bg-blue: #eaf2f8;
+            --border: #e5e8eb;
+            --radius: 16px;
+            --radius-sm: 10px;
+            --shadow: 0 4px 24px rgba(26, 82, 118, 0.08);
+            --shadow-lg: 0 12px 48px rgba(26, 82, 118, 0.12);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ═══ HEADER ═══ */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        .logo-img {
+            height: 42px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-sub {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            color: var(--text-light);
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .nav { display: flex; align-items: center; gap: 8px; }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.92rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .nav a:hover { color: var(--primary); background: var(--bg-blue); }
+        .nav a.active { color: var(--primary); }
+
+        .nav-cta {
+            background: var(--primary) !important;
+            color: white !important;
+            padding: 10px 22px !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            font-size: 0.88rem !important;
+        }
+
+        .nav-cta:hover { background: var(--primary-light) !important; transform: translateY(-1px); }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--dark);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            z-index: 999;
+            padding: 24px;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mobile-menu.open { display: flex; }
+
+        .mobile-menu a {
+            display: block;
+            text-decoration: none;
+            color: var(--text);
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 14px 20px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .mobile-menu a:hover { background: var(--bg-blue); color: var(--primary); }
+
+        .mobile-menu .mob-cta {
+            display: block;
+            text-align: center;
+            background: var(--primary);
+            color: white;
+            padding: 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        /* ═══ HERO ═══ */
+        .hero {
+            padding: 140px 24px 80px;
+            background: linear-gradient(135deg, #f8fbfe 0%, #eaf2f8 50%, #e8f6f3 100%);
+            overflow: hidden;
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            border: 1px solid var(--border);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .hero-badge .star { color: #f39c12; font-size: 1rem; }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-title .accent { color: var(--primary); }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 480px;
+        }
+
+        .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 16px rgba(26, 82, 118, 0.25);
+        }
+
+        .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(26, 82, 118, 0.3); }
+
+        .btn-outline {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover { background: var(--bg-blue); }
+
+        .btn-accent {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 4px 16px rgba(20, 143, 119, 0.25);
+        }
+
+        .btn-accent:hover { background: var(--accent-light); transform: translateY(-2px); }
+
+        .hero-image {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-image .overlay-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 20px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--dark);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .hero-image .overlay-badge span { color: var(--accent); }
+
+        /* ═══ STATS ═══ */
+        .stats {
+            padding: 60px 24px;
+            background: white;
+        }
+
+        .stats-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 24px 16px;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.88rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* ═══ BENEFITS ═══ */
+        .benefits {
+            padding: 80px 24px;
+            background: var(--bg-warm);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 56px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .benefits-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+        .benefit-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .benefit-content { padding: 28px; }
+
+        .benefit-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .benefit-text {
+            font-size: 0.92rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ═══ PROCESS ═══ */
+        .process {
+            padding: 80px 24px;
+            background: white;
+        }
+
+        .process-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .process-step { text-align: center; }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--bg-blue);
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .step-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .step-text {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ═══ REVIEWS ═══ */
+        .reviews {
+            padding: 80px 24px;
+            background: var(--bg-warm);
+        }
+
+        .reviews-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .review-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 32px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .review-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+        .review-stars {
+            color: #f39c12;
+            font-size: 1rem;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .review-author {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        .review-date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 2px;
+        }
+
+        .review-source {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-top: 8px;
+        }
+
+        /* ═══ CTA BANNER ═══ */
+        .cta-banner {
+            padding: 80px 24px;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            text-align: center;
+        }
+
+        .cta-banner-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-banner .section-title { color: white; margin-bottom: 16px; }
+
+        .cta-banner p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .cta-banner .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+
+        .cta-banner .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.3); }
+
+        /* ═══ FAQ ACCORDION ═══ */
+        .faq {
+            padding: 80px 24px;
+            background: white;
+        }
+
+        .faq-list {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 24px 0;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover { color: var(--primary); }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            font-weight: 300;
+            transition: var(--transition);
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 0 24px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-item.open .faq-answer { max-height: 300px; }
+
+        /* ═══ FOOTER ═══ */
+        .footer {
+            padding: 48px 24px 24px;
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .footer-desc {
+            font-size: 0.88rem;
+            line-height: 1.7;
+            max-width: 320px;
+        }
+
+        .footer h4 {
+            color: white;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+
+        .footer a {
+            display: block;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 4px 0;
+            transition: var(--transition);
+        }
+
+        .footer a:hover { color: white; }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        .footer-bottom a { display: inline; color: var(--accent-light); }
+
+        /* ═══ RESPONSIVE ═══ */
+        @media (max-width: 900px) {
+            .nav { display: none; }
+            .hamburger { display: flex; }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-subtitle { margin: 0 auto 32px; }
+            .hero-actions { justify-content: center; }
+
+            .stats-inner { grid-template-columns: 1fr 1fr; gap: 16px; }
+            .benefits-grid { grid-template-columns: 1fr; max-width: 500px; }
+            .process-grid { grid-template-columns: 1fr; max-width: 360px; gap: 32px; }
+            .reviews-grid { grid-template-columns: 1fr; max-width: 500px; }
+
+            .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero { padding: 110px 16px 60px; }
+            .hero-title { font-size: 1.9rem; }
+            .hero-actions { flex-direction: column; align-items: center; }
+            .btn { width: 100%; justify-content: center; }
+            .stats-inner { grid-template-columns: 1fr 1fr; }
+            .stat-number { font-size: 2.2rem; }
+        }
+
+        /* ═══ ANIMATIONS ═══ */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-up {
+            opacity: 0;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .fade-up:nth-child(1) { animation-delay: 0.1s; }
+        .fade-up:nth-child(2) { animation-delay: 0.2s; }
+        .fade-up:nth-child(3) { animation-delay: 0.3s; }
+        .fade-up:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <img src="photo_03.jpg" alt="Dental Centar Mihić logo" class="logo-img">
+            <div>
+                <div class="logo-text">Dental Centar Mihić</div>
+                <div class="logo-sub">Stomatologija i ortodoncija</div>
+            </div>
+        </a>
+        <nav class="nav">
+            <a href="index.html" class="active">Početna</a>
+            <a href="usluge.html">Usluge</a>
+            <a href="o-nama.html">O nama</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="tel:+38166251144" class="nav-cta">Zakaži pregled</a>
+        </nav>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Meni">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMenu()">Početna</a>
+    <a href="usluge.html" onclick="toggleMenu()">Usluge</a>
+    <a href="o-nama.html" onclick="toggleMenu()">O nama</a>
+    <a href="kontakt.html" onclick="toggleMenu()">Kontakt</a>
+    <a href="tel:+38166251144" class="mob-cta">Pozovi i zakaži pregled</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-inner">
+        <div>
+            <div class="hero-badge fade-up">
+                <span class="star">&#9733;</span> 4.9 na Google-u &middot; 64 recenzije
+            </div>
+            <h1 class="hero-title fade-up">
+                64 pacijenta ne može <span class="accent">da greši.</span>
+            </h1>
+            <p class="hero-subtitle fade-up">
+                Stomatološka ordinacija na Karađorđevoj kojoj Novosađani veruju. Profesionalan tim, prijatna atmosfera, poštene cene.
+            </p>
+            <div class="hero-actions fade-up">
+                <a href="tel:+38166251144" class="btn btn-primary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    Pozovi nas
+                </a>
+                <a href="usluge.html" class="btn btn-outline">Pogledaj usluge</a>
+            </div>
+        </div>
+        <div class="hero-image fade-up">
+            <img src="photo_01.jpg" alt="Dental Centar Mihić, Karađorđeva 28, Novi Sad" loading="lazy">
+            <div class="overlay-badge">Karađorđeva 28 &middot; <span>Novi Sad</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+    <div class="stats-inner">
+        <div class="stat fade-up">
+            <div class="stat-number">4.9</div>
+            <div class="stat-label">Prosečna ocena na Google-u</div>
+        </div>
+        <div class="stat fade-up">
+            <div class="stat-number">64</div>
+            <div class="stat-label">Zadovoljna pacijenta</div>
+        </div>
+        <div class="stat fade-up">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Doktora u timu</div>
+        </div>
+        <div class="stat fade-up">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Preporuka pacijenata</div>
+        </div>
+    </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+    <div class="section-header">
+        <div class="section-label">Zašto baš kod nas</div>
+        <h2 class="section-title">Rezultati koje tvoji zubi zaslužuju</h2>
+        <p class="section-subtitle">Pacijenti se vraćaju jer znaju šta dobijaju. Evo šta izdvaja Dental Centar Mihić.</p>
+    </div>
+    <div class="benefits-grid">
+        <div class="benefit-card fade-up">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="Bezbolne intervencije" class="benefit-img" loading="lazy">
+            <div class="benefit-content">
+                <div class="benefit-title">Strah od zubara? Ovde nestaje.</div>
+                <div class="benefit-text">Pacijent koji se 36 godina plašio zubara sada redovno dolazi. Pristup koji menja odnos prema stomatologu.</div>
+            </div>
+        </div>
+        <div class="benefit-card fade-up">
+            <img src="https://images.unsplash.com/photo-1629909615957-be67e4c0e7a3?auto=format&fit=crop&w=600&q=80" alt="Savremena oprema" class="benefit-img" loading="lazy">
+            <div class="benefit-content">
+                <div class="benefit-title">Ortodoncija sa nemačkom preciznošću</div>
+                <div class="benefit-text">ForestaDent sistem, jedan od vodećih u Evropi. Pravilan zagrižaj i lep osmeh, bez kompromisa.</div>
+            </div>
+        </div>
+        <div class="benefit-card fade-up">
+            <img src="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&w=600&q=80" alt="Prijatna atmosfera" class="benefit-img" loading="lazy">
+            <div class="benefit-content">
+                <div class="benefit-title">Doktor koji te sasluša</div>
+                <div class="benefit-text">Detaljni saveti, poštene cene, vreme posvećeno tebi. Bez žurbe, bez skrivenih troškova.</div>
+            </div>
+        </div>
+        <div class="benefit-card fade-up">
+            <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80" alt="Tim profesionalaca" class="benefit-img" loading="lazy">
+            <div class="benefit-content">
+                <div class="benefit-title">Govorimo i engleski</div>
+                <div class="benefit-text">Strani pacijenti se osećaju kao kod kuće. Isti kvalitet, bez jezičke barijere.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+    <div class="section-header">
+        <div class="section-label">Kako funkcioniše</div>
+        <h2 class="section-title">Tvoj prvi pregled u 3 koraka</h2>
+    </div>
+    <div class="process-grid">
+        <div class="process-step fade-up">
+            <div class="step-number">1</div>
+            <div class="step-title">Pozovi nas</div>
+            <div class="step-text">Zakaži termin koji ti odgovara. Jedan poziv, par minuta, dogovoreno.</div>
+        </div>
+        <div class="process-step fade-up">
+            <div class="step-number">2</div>
+            <div class="step-title">Pregled i plan</div>
+            <div class="step-text">Detaljan pregled, razgovor i jasan plan. Bez iznenađenja, bez skrivenih troškova.</div>
+        </div>
+        <div class="process-step fade-up">
+            <div class="step-number">3</div>
+            <div class="step-title">Osmeh za ponos</div>
+            <div class="step-text">Završena intervencija, zadovoljan pacijent. Kao 64 pre tebe.</div>
+        </div>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+        <a href="tel:+38166251144" class="btn btn-accent">Zakaži prvi pregled</a>
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+    <div class="section-header">
+        <div class="section-label">Šta kažu pacijenti</div>
+        <h2 class="section-title">Recenzije sa Google-a</h2>
+        <p class="section-subtitle">Prave reči pravih pacijenata. Bez filtera.</p>
+    </div>
+    <div class="reviews-grid">
+        <div class="review-card fade-up">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="review-text">"Toplo preporučujem! Doktor Nikola Jovanović je najveći profesionalac kod koga sam ikada imao čast da budem lečen. Sa 36 godina sam prevazišao strah od zubara. Hvala celom timu iz ordinacije, veoma prijatni i uslužni ljudi!"</div>
+            <div class="review-author">David Odadzin</div>
+            <div class="review-date">Pre mesec dana</div>
+            <div class="review-source">
+                <svg width="14" height="14" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                Google recenzija
+            </div>
+        </div>
+        <div class="review-card fade-up">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="review-text">"Iako niko ne voli da ide kod zubara, kod njih je uvek prijatno. Sve pohvale za stručno i uvek ljubazno osoblje."</div>
+            <div class="review-author">Mladen Miolski</div>
+            <div class="review-date">Pre godinu dana</div>
+            <div class="review-source">
+                <svg width="14" height="14" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                Google recenzija
+            </div>
+        </div>
+        <div class="review-card fade-up">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="review-text">"Odličan stomatološki centar, veoma vešti i profesionalni, veoma su se prilagodili našim potrebama. Dali su nam odlične savete i veoma su pošteni sa cenama. Definitivno ćemo se vratiti."</div>
+            <div class="review-author">Miodrag Bjelic</div>
+            <div class="review-date">Pre mesec dana</div>
+            <div class="review-source">
+                <svg width="14" height="14" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                Google recenzija
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+        <a href="https://maps.google.com/?cid=1226229116753992826" target="_blank" class="btn btn-outline">Pročitaj sve recenzije na Google-u</a>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+    <div class="section-header">
+        <div class="section-label">Česta pitanja</div>
+        <h2 class="section-title">Imaš pitanje? Imamo odgovor.</h2>
+    </div>
+    <div class="faq-list">
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                Da li je prvi pregled besplatan?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">Pozovi nas na 066/251-144 i dogovorićemo sve detalje oko prvog pregleda. Tim Dental Centra Mihić će ti dati sve informacije koje su ti potrebne.</div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                Plašim se zubara. Da li je kod vas bezbolno?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">Razumemo. Mnogi pacijenti dolaze kod nas upravo zbog toga. David je sa 36 godina prevazišao strah, a Mladen kaže da je kod nas uvek prijatno, iako niko ne voli zubara. Pristupamo svakom pacijentu sa strpljenjem i pažnjom.</div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                Koje usluge nudite?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">Opšta stomatologija, ortodoncija (ispravljanje zuba) sa ForestaDent sistemom, estetska stomatologija, protetika i mnogo više. Pogledaj kompletnu listu na stranici Usluge.</div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                Da li govorite engleski?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">Da. Dr Nikola Jovanović govori engleski, tako da su strani pacijenti dobrodošli. Pauline iz inostranstva je to posebno pohvalila u svojoj recenziji.</div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                Gde se nalazite?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">Karađorđeva 28, Novi Sad. Lako dostupni iz centra grada. Pogledaj tačnu lokaciju na stranici Kontakt.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+    <div class="cta-banner-inner">
+        <h2 class="section-title">Tvoj osmeh zaslužuje najbolje</h2>
+        <p>Zakaži pregled i uveri se zašto 64 pacijenta daje ocenu 4.9. Poziv traje minut, rezultat ostaje zauvek.</p>
+        <a href="tel:+38166251144" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Pozovi: 066/251-144
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div>
+            <div class="footer-logo">Dental Centar Mihić</div>
+            <p class="footer-desc">Stomatološka ordinacija na Karađorđevoj 28 u Novom Sadu. Dr Marko Mihić, spec. ortodoncije. Profesionalna stomatologija i ortodoncija za celu porodicu.</p>
+        </div>
+        <div>
+            <h4>Stranice</h4>
+            <a href="index.html">Početna</a>
+            <a href="usluge.html">Usluge</a>
+            <a href="o-nama.html">O nama</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
+        <div>
+            <h4>Kontakt</h4>
+            <a href="tel:+38166251144">066/251-144</a>
+            <a href="https://wa.me/38166251144">WhatsApp</a>
+            <a href="https://maps.google.com/?cid=1226229116753992826" target="_blank">Google Maps</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Dental Centar Mihić. Sva prava zadržana.</span>
+        <span>Sajt napravio <a href="https://nikolajanjic.com">Nikola Janjić</a></span>
+    </div>
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    function toggleFaq(btn) {
+        const item = btn.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+    }
+</script>
+
+</body>
+</html>
