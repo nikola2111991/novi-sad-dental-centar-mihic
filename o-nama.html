@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O nama | Dental Centar Mihić | Dr Marko Mihić, spec. ortodoncije</title>
+    <meta name="description" content="Upoznajte tim Dental Centra Mihić. Dr Marko Mihić, specijalista ortodoncije, i Dr Nikola Jovanović. Karađorđeva 28, Novi Sad.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #1a5276; --primary-light: #2471a3; --accent: #148f77; --accent-light: #1abc9c;
+            --dark: #1c2833; --text: #2c3e50; --text-light: #5d6d7e; --bg: #ffffff; --bg-warm: #f8f9fa;
+            --bg-blue: #eaf2f8; --border: #e5e8eb; --radius: 16px; --radius-sm: 10px;
+            --shadow: 0 4px 24px rgba(26,82,118,0.08); --shadow-lg: 0 12px 48px rgba(26,82,118,0.12);
+            --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--dark); }
+        .logo-img { height: 42px; width: auto; }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 600; letter-spacing: -0.02em; }
+        .logo-sub { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; color: var(--text-light); font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; }
+        .nav { display: flex; align-items: center; gap: 8px; }
+        .nav a { text-decoration: none; color: var(--text); font-size: 0.92rem; font-weight: 500; padding: 8px 16px; border-radius: var(--radius-sm); transition: var(--transition); }
+        .nav a:hover { color: var(--primary); background: var(--bg-blue); }
+        .nav a.active { color: var(--primary); }
+        .nav-cta { background: var(--primary) !important; color: white !important; padding: 10px 22px !important; border-radius: 50px !important; font-weight: 600 !important; font-size: 0.88rem !important; }
+        .nav-cta:hover { background: var(--primary-light) !important; transform: translateY(-1px); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: var(--transition); }
+        .mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: white; z-index: 999; padding: 24px; flex-direction: column; gap: 8px; }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a { display: block; text-decoration: none; color: var(--text); font-size: 1.1rem; font-weight: 500; padding: 14px 20px; border-radius: var(--radius-sm); }
+        .mobile-menu .mob-cta { display: block; text-align: center; background: var(--primary); color: white; padding: 16px; border-radius: 50px; font-weight: 600; margin-top: 8px; }
+
+        .page-hero { padding: 140px 24px 60px; background: linear-gradient(135deg, #f8fbfe 0%, #eaf2f8 50%, #e8f6f3 100%); text-align: center; }
+        .page-hero-inner { max-width: 640px; margin: 0 auto; }
+        .section-label { display: inline-block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 12px; }
+        .page-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; color: var(--dark); line-height: 1.2; margin-bottom: 16px; }
+        .page-subtitle { font-size: 1.05rem; color: var(--text-light); line-height: 1.7; }
+
+        .about-story { padding: 80px 24px; }
+        .about-story-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: center; }
+        .about-img { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
+        .about-img img { width: 100%; height: 100%; object-fit: cover; }
+        .about-text h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--dark); margin-bottom: 20px; line-height: 1.3; }
+        .about-text p { font-size: 0.95rem; color: var(--text-light); line-height: 1.8; margin-bottom: 16px; }
+
+        .values { padding: 80px 24px; background: var(--bg-warm); }
+        .section-header { text-align: center; max-width: 600px; margin: 0 auto 56px; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; color: var(--dark); line-height: 1.2; margin-bottom: 16px; }
+        .values-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .value-card { background: white; border-radius: var(--radius); padding: 36px 28px; box-shadow: var(--shadow); text-align: center; transition: var(--transition); }
+        .value-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .value-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--bg-blue); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.6rem; }
+        .value-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 600; color: var(--dark); margin-bottom: 10px; }
+        .value-text { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; }
+
+        .stats-bar { padding: 60px 24px; background: white; }
+        .stats-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .stat { text-align: center; }
+        .stat-number { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700; color: var(--primary); line-height: 1; margin-bottom: 8px; }
+        .stat-label { font-size: 0.88rem; color: var(--text-light); font-weight: 500; }
+
+        .gallery { padding: 80px 24px; }
+        .gallery-inner { max-width: 1000px; margin: 0 auto; }
+        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .gallery-item { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+        .gallery-item img { width: 100%; height: 300px; object-fit: cover; object-position: center; transition: var(--transition); }
+        .gallery-item:hover img { transform: scale(1.03); }
+
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 50px; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: var(--transition); }
+        .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 16px rgba(26,82,118,0.25); }
+        .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); }
+
+        .cta-banner { padding: 80px 24px; background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%); text-align: center; }
+        .cta-banner-inner { max-width: 600px; margin: 0 auto; }
+        .cta-banner .section-title { color: white; }
+        .cta-banner p { color: rgba(255,255,255,0.8); font-size: 1.05rem; margin-bottom: 32px; line-height: 1.7; }
+        .cta-banner .btn-primary { background: white; color: var(--primary); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+
+        .footer { padding: 48px 24px 24px; background: var(--dark); color: rgba(255,255,255,0.7); }
+        .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600; color: white; margin-bottom: 12px; }
+        .footer-desc { font-size: 0.88rem; line-height: 1.7; max-width: 320px; }
+        .footer h4 { color: white; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+        .footer a { display: block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; padding: 4px 0; transition: var(--transition); }
+        .footer a:hover { color: white; }
+        .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; }
+        .footer-bottom a { display: inline; color: var(--accent-light); }
+
+        @media (max-width: 900px) {
+            .nav { display: none; }
+            .hamburger { display: flex; }
+            .about-story-inner { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: 1fr; max-width: 400px; }
+            .stats-inner { grid-template-columns: 1fr; gap: 24px; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+        }
+        @media (max-width: 480px) {
+            .page-hero { padding: 110px 16px 48px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <img src="photo_03.jpg" alt="Dental Centar Mihić logo" class="logo-img">
+            <div><div class="logo-text">Dental Centar Mihić</div><div class="logo-sub">Stomatologija i ortodoncija</div></div>
+        </a>
+        <nav class="nav">
+            <a href="index.html">Početna</a>
+            <a href="usluge.html">Usluge</a>
+            <a href="o-nama.html" class="active">O nama</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="tel:+38166251144" class="nav-cta">Zakaži pregled</a>
+        </nav>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Meni"><span></span><span></span><span></span></button>
+    </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Početna</a><a href="usluge.html">Usluge</a><a href="o-nama.html">O nama</a><a href="kontakt.html">Kontakt</a>
+    <a href="tel:+38166251144" class="mob-cta">Pozovi i zakaži pregled</a>
+</div>
+
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <div class="section-label">O nama</div>
+        <h1 class="page-title">Tim koji brine o tvom osmehu</h1>
+        <p class="page-subtitle">Dr Marko Mihić, specijalista ortodoncije, i tim stručnjaka. Karađorđeva 28, Novi Sad.</p>
+    </div>
+</section>
+
+<section class="about-story">
+    <div class="about-story-inner">
+        <div class="about-img">
+            <img src="photo_02.jpg" alt="Dental Centar Mihić, Karađorđeva ulica, Novi Sad" loading="lazy">
+        </div>
+        <div class="about-text">
+            <h2>Ordinacija u kojoj se zaboravlja strah od zubara</h2>
+            <p>Dental Centar Mihić nalazi se na Karađorđevoj 28 u Novom Sadu. Ordinaciju vodi Dr Marko Mihić, specijalista ortodoncije, uz podršku Dr Nikole Jovanovića i stručnog tima.</p>
+            <p>Ono što pacijenti najčešće ističu je prijatna atmosfera i profesionalan pristup. David Odadzin je sa 36 godina prevazišao strah od zubara upravo ovde. Mladen Miolski kaže da je kod nas uvek prijatno, iako niko ne voli da ide kod zubara.</p>
+            <p>Koristimo ForestaDent sistem iz Nemačke za ortodonciju, što znači preciznost i kvalitet u svakom koraku terapije. Za strane pacijente, tim govori i engleski.</p>
+            <p>Svaki pacijent dobija individualan pristup, poštene savete i transparentne cene. Bez žurbe, bez iznenađenja.</p>
+        </div>
+    </div>
+</section>
+
+<section class="stats-bar">
+    <div class="stats-inner">
+        <div class="stat">
+            <div class="stat-number">4.9</div>
+            <div class="stat-label">Prosečna ocena od 64 pacijenta</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Doktora u timu</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">5/5</div>
+            <div class="stat-label">Sve recenzije ocenjene maksimalno</div>
+        </div>
+    </div>
+</section>
+
+<section class="values">
+    <div class="section-header">
+        <div class="section-label">Naše vrednosti</div>
+        <h2 class="section-title">Zašto pacijenti ostaju</h2>
+    </div>
+    <div class="values-grid">
+        <div class="value-card">
+            <div class="value-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a5276" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </div>
+            <div class="value-title">Pristup bez straha</div>
+            <div class="value-text">Svaki pacijent je drugačiji. Pristupamo sa strpljenjem, naročito onima koji se plaše. Rezultat? Pacijenti koji se vraćaju sa osmehom.</div>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a5276" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="value-title">Poštenost u cenama</div>
+            <div class="value-text">Jasan plan, jasna cena. Pacijenti ističu da su cene poštene, a saveti detaljni. Nikad ne radimo ono što nije neophodno.</div>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a5276" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 12a4 4 0 01-8 0"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <div class="value-title">Svaki osmeh je jedinstven</div>
+            <div class="value-text">Individualan pristup svakom pacijentu. Od dijagnostike do završnog rezultata, plan je prilagođen baš tebi.</div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery">
+    <div class="gallery-inner">
+        <div class="section-header">
+            <div class="section-label">Naša ordinacija</div>
+            <h2 class="section-title">Pogledaj gde te čekamo</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="photo_01.jpg" alt="Ulaz u Dental Centar Mihić" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="photo_02.jpg" alt="Dental Centar Mihić spolja" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-banner">
+    <div class="cta-banner-inner">
+        <h2 class="section-title">Dođi, uveri se.</h2>
+        <p>64 pacijenta sa ocenom 4.9 govori za nas. Zakaži pregled i postani deo priče.</p>
+        <a href="tel:+38166251144" class="btn btn-primary">Pozovi: 066/251-144</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div><div class="footer-logo">Dental Centar Mihić</div><p class="footer-desc">Stomatološka ordinacija na Karađorđevoj 28 u Novom Sadu. Profesionalna stomatologija i ortodoncija.</p></div>
+        <div><h4>Stranice</h4><a href="index.html">Početna</a><a href="usluge.html">Usluge</a><a href="o-nama.html">O nama</a><a href="kontakt.html">Kontakt</a></div>
+        <div><h4>Kontakt</h4><a href="tel:+38166251144">066/251-144</a><a href="https://wa.me/38166251144">WhatsApp</a><a href="https://maps.google.com/?cid=1226229116753992826" target="_blank">Google Maps</a></div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Dental Centar Mihić. Sva prava zadržana.</span>
+        <span>Sajt napravio <a href="https://nikolajanjic.com">Nikola Janjić</a></span>
+    </div>
+</footer>
+<script>function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}</script>
+</body>
+</html>
